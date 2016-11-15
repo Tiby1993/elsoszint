@@ -29,7 +29,7 @@
     }
 </script>
 <ul>
-  <li><a href="/elsoszint/login/index/">Kezdőlap</a></li>
+  <li><a href="/elsoszint/login/index">Kezdőlap</a></li>
   <li><a href="/elsoszint/feed/index">Hírfolyam</a></li>
   <li><a href="#contact">Rólunk</a></li>
   <li><a href="#about">Bejelentkezés</a></li>
