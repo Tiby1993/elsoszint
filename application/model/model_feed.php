@@ -30,8 +30,8 @@ class model_feed_post extends Application
             $query .= "WHERE `created_by` = " . $user_id;
         }
 
-        if($sql = mysql_query($query)) {
-            $data = mysql_fetch_assoc($sql);
+        if($sql = mysqli_query($query)) {
+            $data = mysqli_fetch_assoc($sql);
         } else {
             throw new Exception ("Hiba");
         }
@@ -49,8 +49,8 @@ class model_feed_post extends Application
                   FROM comment
                   WHERE feed_post_id = " . $post_id;
 
-        if($sql = mysql_query($query)) {
-            $data = mysql_fetch_assoc($sql);
+        if($sql = mysqli_query($query)) {
+            $data = mysqli_fetch_assoc($sql);
         } else {
             throw new Exception ("Hiba");
         }
@@ -69,8 +69,8 @@ class model_feed_post extends Application
                   JOIN users as u ON u.id = f.user_id 
                   WHERE feed_post_id = " . $post_id;
 
-        if($sql = mysql_query($query)) {
-            $data = mysql_fetch_assoc($sql);
+        if($sql = mysqli_query($query)) {
+            $data = mysqli_fetch_assoc($sql);
         } else {
             throw new Exception ("Hiba");
         }
@@ -88,8 +88,8 @@ class model_feed_post extends Application
                   FROM feed_like as f 
                   WHERE feed_post_id = " . $post_id;
 
-        if($sql = mysql_query($query)) {
-            $data = mysql_fetch_assoc($sql);
+        if($sql = mysqli_query($query)) {
+            $data = mysqli_fetch_assoc($sql);
         } else {
             throw new Exception ("Hiba");
         }

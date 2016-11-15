@@ -17,8 +17,8 @@ class model_profile extends Application {
 function profile($id) {
    $data;
    $query = "SELECT * FROM `users` WHERE `session_id` = '".$id."'";
-    if($sql = mysql_query($query)) {
-		$data = mysql_fetch_assoc($sql); 
+    if($sql = mysqli_query($query)) {
+		$data = mysqli_fetch_assoc($sql);
     } else {  
      throw new Exception ("Nem vagy bejelentkezve");
 	}

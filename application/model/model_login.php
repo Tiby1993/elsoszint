@@ -21,13 +21,13 @@ class model_login extends Application {
   //bejelentkezés metódus
     function login($user, $pass) {
         $query = "SELECT * FROM `users` WHERE `user`='".$user."' AND `password`='".sha1($pass)."'";
-        if($sql = mysql_query($query)) {
-            $row = mysql_fetch_array($sql);
+        if($sql = mysqli_query($query)) {
+            $row = mysqli_fetch_array($sql);
 			//ha van ilyen user az adatbázisban, generálunk neki egy session_id-t amit db-ben tárolunk.
             if(!empty($row['id'])) {
             $_SESSION['id']=sha1(rand(1,100));
 			$sess_id = "UPDATE `users` SET `session_id` = '".$_SESSION['id']."' WHERE `user`='".$user."' AND `password`='".sha1($pass)."'";
-			mysql_query($sess_id);
+			mysqli_query($sess_id);
 			//átdobjuk a profil oldalra
 			header("Location: ".BASE_PATH."/profile/index");
 			}        
@@ -43,7 +43,7 @@ class model_login extends Application {
 		echo "kijelentkezés";
 		// kitöröljük db-ből a session_id-t és töröljük a munkamenetet is.
 		$sess_id = "UPDATE `users` SET `session_id` = '0' WHERE `session_id` = '".$_SESSION['id']."'";
-			mysql_query($sess_id);
+			mysqli_query($sess_id);
 		session_destroy();
 		header("Location: ".BASE_PATH."/login/index");
 		}

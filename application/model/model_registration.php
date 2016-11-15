@@ -23,7 +23,7 @@ class model_registration extends Application {
   //regisztráció modul.
 function reg($username, $passwd, $email, $street, $city, $full_name){
 	$query = "INSERT INTO `users` (`user`, `password`, `email`, `street`, `city`, `full_name`) VALUES ('".$username."', '".sha1($passwd)."', '".$email."', '".$street."', '".$city."','".$full_name."');";  
-	if($sql = mysql_query($query)) {
+	if($sql = mysqli_query($query)) {
 		echo "ok";
 	} else {
 	  throw new Exception ("Error: Can not excute te query");

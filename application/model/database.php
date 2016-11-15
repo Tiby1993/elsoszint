@@ -29,17 +29,18 @@ class database
 
     private function connect()
     {
+        $mysqli = new mysqli($this->host, $this->user, $this->password, $this->database);
         //adatbázis csatlakozás
-        if(!mysql_connect($this->host, $this->user, $this->password))
-            throw new Exception("error: not connected to the server.");
+//        if(!mysqli_connect($this->host, $this->user, $this->password))
+//            throw new Exception("error: not connected to the server.");
         //adatbázis kivállasztása 
-        if(!mysql_select_db($this->database))
+        if(!$mysqli->select_db($this->database))
             throw new Exception ("Error: No database selected.");
 
     }
 
     function close()
     {
-        mysql_close();
+        mysqli_close();
     }
 }
