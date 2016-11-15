@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Gulyás Gergő
- * Date: 2016. 11. 15.
- * Time: 23:20
+ * Class model_feed_post
+ * Hírfolyam osztály
+ *
+ * @author Gulyás Gergő
  */
 class model_feed_post extends Application
 {

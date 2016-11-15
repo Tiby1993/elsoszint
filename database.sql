@@ -16,8 +16,8 @@ CREATE TABLE users (
 
 CREATE TABLE feed_post (
 	id int(255) NOT NULL AUTO_INCREMENT,
-	text_hu_HU blob NOT NULL,
-	text_en_US blob NOT NULL,
+	text_hu_HU text NOT NULL,
+	text_en_US text NOT NULL,
 	created_by int(255) NOT NULL REFERENCES users(id),
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 	modified_by  int(255) REFERENCES users(id),
@@ -32,9 +32,9 @@ CREATE TABLE feed_like (
 
 CREATE TABLE comment (
 	id int(255) NOT NULL AUTO_INCREMENT,
-	feed_post_id INT(255) NOT NULL REFERENCES feed_post(id)
-	text_hu_HU blob,
-	text_en_US blob,
+	feed_post_id INT(255) NOT NULL REFERENCES feed_post(id),
+	text_hu_HU text,
+	text_en_US text,
 	created_by int(255) NOT NULL REFERENCES users(id),
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)

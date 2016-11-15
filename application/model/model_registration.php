@@ -22,7 +22,7 @@ class model_registration extends Application {
  }
   //regisztráció modul.
 function reg($username, $passwd, $email, $street, $city, $full_name){
-	$query = "INSERT INTO `users` (`user`, `password`, `email`, `street`, `city`, `full_name`) VALUES ('".$username."', '".sha1($passwd)."', '".$email."', '".$street."', '".$city."','".$full_name."');";  
+	$query = "INSERT INTO `users` (`user`, `password`, `email`, `street`, `city`, `full_name`) VALUES ('".$username."', '".md5($passwd)."', '".$email."', '".$street."', '".$city."','".$full_name."');";
 	if($sql = mysqli_query($query)) {
 		echo "ok";
 	} else {

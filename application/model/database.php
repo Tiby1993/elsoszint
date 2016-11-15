@@ -7,6 +7,8 @@ class database
     private $password;
     private $database;
 
+    public $mysqli;
+
     function __construct($filename)
     {
         
@@ -22,9 +24,8 @@ class database
         $this->user = $user;
         $this->password = $password;
         $this->database = $database;
-        
 
-        $this->connect();
+        $this->mysqli = $this->connect();
     }    
 
     private function connect()
@@ -36,6 +37,8 @@ class database
         //adatbázis kivállasztása 
         if(!$mysqli->select_db($this->database))
             throw new Exception ("Error: No database selected.");
+
+        return $mysqli;
 
     }
 
