@@ -1,9 +1,9 @@
 ﻿<?php
    session_start();
 // a gyökér könyvtár
-define("BASE_PATH", "http://localhost/teconcept");
+define("BASE_PATH", "http://localhost/elsoszint");
 //a szcript könyvtár
-$path = "/teconcept";
+$path = "/elsoszint";
 //feldaraboljuk az url-t, mert ez alapján hívjük meg a szükséges ostályokat, metódusokat, paramétereket.
 $url = $_SERVER['REQUEST_URI'];
 $url = str_replace($path,"",$url);
